@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ken's E-Portfolio - Cloud Architect in the Making</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body { font-family: 'Arial', sans-serif; }
+    .tab-active { border-bottom: 4px solid #1e40af; color: #1e40af; }
+    .content { display: none; }
+    .content-active { display: block; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-blue-950 text-white min-h-screen">
+
+  <!-- HERO -->
+  <div class="h-screen flex items-center justify-center bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover relative">
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="text-center z-10 px-6">
+      <img src="[你的專業頭像.jpg]" alt="Ken" class="w-40 h-40 mx-auto rounded-full border-8 border-blue-500 shadow-2xl">
+      <h1 class="text-6xl font-bold mt-6">Ken [你的姓氏]</h1>
+      <p class="text-3xl mt-2">Future Cloud Architect | Higher Diploma in Cloud & Data Centre Admin</p>
+      <p class="mt-4 max-w-md mx-auto">Tung Chung boy who turns coffee into cloud infrastructure ☕☁️</p>
+      <button onclick="switchTab(0)" class="mt-8 bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold">Start Exploring My Journey</button>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 bg-black/80 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <h2 class="text-2xl font-bold">Ken's Portfolio</h2>
+      <div class="flex gap-8 text-lg">
+        <button onclick="switchTab(0)" id="tab0" class="tab-active pb-1">About Me</button>
+        <button onclick="switchTab(1)" id="tab1" class="pb-1">Competencies & Artifacts</button>
+        <button onclick="switchTab(2)" id="tab2" class="pb-1">Career Goal & Plan</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE 1: ABOUT ME (Part A1) -->
+  <div id="content0" class="content content-active max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-xl leading-relaxed">[自我介紹：Hi, I'm Ken from Tung Chung, studying Higher Diploma in Cloud and Data Centre Administration. My interests include cloud tech, hiking in Lantau, and building scalable systems that don't crash at 3am.]</p>
+        <p class="mt-6 text-xl leading-relaxed">[相關個人資訊：As a local HK student, I'm passionate about data centre ops because... (解釋點解同career match)]</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur p-8 rounded-3xl">
+        <img src="[你的專業頭像.jpg]" alt="Profile" class="rounded-3xl shadow-2xl">
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: COMPETENCIES & ARTIFACTS (Part A2) -->
+  <div id="content1" class="content max-w-6xl mx-auto px-6 py-16 bg-white/5">
+    <h2 class="text-4xl font-bold mb-8 text-center">Key Competencies & Evidence</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- 卡片1 -->
+      <div class="bg-white/10 p-8 rounded-3xl hover:scale-105 transition">
+        <h3 class="font-bold text-2xl mb-3">Certificate: AWS Cloud Practitioner</h3>
+        <p class="text-gray-300">[描述資格]</p>
+        <a href="[certificate-scan.pdf]" class="text-blue-400 underline mt-4 block">View Certificate →</a>
+      </div>
+      <!-- 卡片2 -->
+      <div class="bg-white/10 p-8 rounded-3xl hover:scale-105 transition">
+        <h3 class="font-bold text-2xl mb-3">Project: Cloud Migration Simulation</h3>
+        <p class="text-gray-300">[Describe your role & contributions]</p>
+        <img src="[project-screenshot.jpg]" class="mt-6 rounded-2xl">
+      </div>
+      <!-- 加多2-3個卡片自己copy paste -->
+    </div>
+  </div>
+
+  <!-- PAGE 3: CAREER GOAL & PLAN (Part B) -->
+  <div id="content2" class="content max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">Career Goal & Plan</h2>
+    <div class="bg-white/10 p-10 rounded-3xl">
+      <p class="italic text-2xl">"[As a student pursuing a Higher Diploma in Cloud and Data Centre Administration, I am committed to becoming a Cloud Architect... (抄guideline例子或改你自己的)]"</p>
+    </div>
+
+    <h3 class="text-3xl font-bold mt-16 mb-6">Steps to Reach My Goal</h3>
+    <div class="space-y-8">
+      <div class="flex gap-6">
+        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl">1</div>
+        <div><strong>Pursue AWS Solutions Architect Cert</strong><br>2026 Q2</div>
+      </div>
+      <div class="flex gap-6">
+        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl">2</div>
+        <div><strong>Internship at local data centre</strong><br>Summer 2026</div>
+      </div>
+      <!-- 加多steps -->
+    </div>
+
+    <h3 class="text-3xl font-bold mt-16 mb-6">Skills to Learn</h3>
+    <ul class="grid md:grid-cols-3 gap-6">
+      <li class="bg-white/10 p-6 rounded-3xl">Terraform - Coursera, by Dec 2026</li>
+      <!-- 加多 -->
+    </ul>
+  </div>
+
+  <footer class="text-center py-8 text-gray-400">Made with ❤️ for SDD4007 • Ken 2026 • Not AI-generated (I swear)</footer>
+
+  <script>
+    function switchTab(n) {
+      document.querySelectorAll('.content').forEach(c => c.classList.remove('content-active'));
+      document.querySelectorAll('button[id^="tab"]').forEach(b => b.classList.remove('tab-active'));
+      document.getElementById('content'+n).classList.add('content-active');
+      document.getElementById('tab'+n).classList.add('tab-active');
+    }
+    // default open page 0
+    switchTab(0);
+  </script>
+</body>
+</html>
