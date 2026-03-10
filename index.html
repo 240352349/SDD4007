@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Arial', sans-serif; }
+    body { font-family: 'Arial', sans-serif; scroll-behavior: smooth; }
     .tab-active { border-bottom: 4px solid #1e40af; color: #1e40af; }
     .content { display: none; }
     .content-active { display: block; }
@@ -23,10 +23,11 @@
       <h1 class="text-6xl font-bold mt-6">LEE TSZ KIT 李梓傑</h1>
       <p class="text-3xl mt-2">(KEN)</p>
       <p class="text-2xl mt-4">IT Student • Hong Kong Institute of Technology</p>
-     <button onclick="switchTab(0); document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });" 
+      <button onclick="switchTab(0); document.getElementById('about-me').scrollIntoView({ behavior: 'smooth' });" 
               class="mt-8 bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold">
         Explore My Journey
       </button>
+    </div>
   </div>
 
   <!-- NAVBAR -->
@@ -42,7 +43,7 @@
   </nav>
 
   <!-- PAGE 1: ABOUT ME -->
-  <div id="content0" class="content content-active max-w-6xl mx-auto px-6 py-16">
+  <div id="about-me" id="content0" class="content content-active max-w-6xl mx-auto px-6 py-16">
     <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
     <div class="grid md:grid-cols-2 gap-12">
       <div>
@@ -108,8 +109,8 @@
       document.getElementById('content'+n).classList.add('content-active');
       document.getElementById('tab'+n).classList.add('tab-active');
     }
+    // 預設開 About Me
     switchTab(0);
   </script>
 </body>
 </html>
-
