@@ -7,32 +7,29 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { font-family: 'Arial', sans-serif; scroll-behavior: smooth; background: #0a0a0a; }
+    body { font-family: 'Arial', sans-serif; }
     .tab-active { border-bottom: 4px solid #1e40af; color: #1e40af; }
     .content { display: none; }
     .content-active { display: block; }
   </style>
 </head>
-<body class="text-white">
+<body class="bg-gradient-to-br from-gray-900 to-blue-950 text-white min-h-screen">
 
   <!-- HERO -->
-  <div class="h-screen flex items-center justify-center bg-gradient-to-br from-zinc-900 to-black relative overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('./hero-icon.jpg');"></div>
+  <div class="h-screen flex items-center justify-center bg-[url('https://picsum.photos/id/1015/1920/1080')] bg-cover relative">
+    <div class="absolute inset-0 bg-black/60"></div>
     <div class="text-center z-10 px-6">
       <img src="./hero-icon.jpg" alt="KEN" class="w-40 h-40 mx-auto rounded-full border-8 border-blue-500 shadow-2xl object-cover">
       <h1 class="text-6xl font-bold mt-6">LEE TSZ KIT 李梓傑</h1>
       <p class="text-3xl mt-2">(KEN)</p>
       <p class="text-2xl mt-4">IT Student • Hong Kong Institute of Technology</p>
-      <button onclick="document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });" 
-              class="mt-10 bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-full font-semibold text-lg">
-        Explore My Journey
-      </button>
+      <button onclick="exploreJourney()" class="mt-8 bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold">Explore My Journey</button>
     </div>
   </div>
 
   <!-- NAVBAR -->
-  <nav class="sticky top-0 bg-black/95 backdrop-blur-md z-50 border-b border-white/10">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-5">
+  <nav class="sticky top-0 bg-black/80 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
       <h2 class="text-2xl font-bold">KEN's E-Portfolio</h2>
       <div class="flex gap-8 text-lg">
         <button onclick="switchTab(0)" id="tab0" class="tab-active pb-1">About Me</button>
@@ -42,70 +39,65 @@
     </div>
   </nav>
 
-  <!-- ABOUT ME -->
-  <section id="about-section" class="content content-active py-20 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center">About Me</h2>
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6 text-xl leading-relaxed">
-          <p>Hi, I'm LEE TSZ KIT, also known as KEN. I am currently studying IT at Hong Kong Institute of Technology with a strong passion for technology and innovation.</p>
-          <p>I value teamwork and creativity, and I hope to apply what I have learned to help companies improve their performance through technology solutions.</p>
-        </div>
-        <div>
-          <img src="./profile.jpg" alt="Profile" class="rounded-3xl shadow-2xl w-full">
-        </div>
+  <!-- PAGE 1: ABOUT ME -->
+  <div id="content0" class="content content-active max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <p class="text-xl leading-relaxed">Hi, I'm LEE TSZ KIT, also known as KEN. I am currently studying IT at Hong Kong Institute of Technology with a strong passion for technology and innovation.</p>
+        <p class="mt-6 text-xl leading-relaxed">I value teamwork and creativity, and I hope to apply what I have learned to help companies improve their performance through technology solutions.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur p-8 rounded-3xl">
+        <img src="./profile.jpg" alt="Profile" class="rounded-3xl shadow-2xl w-full object-cover">
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- COMPETENCIES -->
-  <section id="content1" class="content py-20 bg-zinc-950">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center">Key Competencies & Evidence</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-zinc-800 p-8 rounded-3xl hover:scale-105 transition">
-          <h3 class="font-bold text-2xl mb-3">Typing Proficiency</h3>
-          <p class="text-gray-300">Chinese: 40 words/min<br>English: 50 words/min</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-3xl hover:scale-105 transition">
-          <h3 class="font-bold text-2xl mb-3">Microsoft Office Suite</h3>
-          <p class="text-gray-300">Advanced skills in Word, Excel & PowerPoint</p>
-        </div>
-        <div class="bg-zinc-800 p-8 rounded-3xl hover:scale-105 transition">
-          <h3 class="font-bold text-2xl mb-3">Teamwork & Creativity</h3>
-          <p class="text-gray-300">Strong collaborator with creative mindset</p>
-        </div>
+  <!-- PAGE 2: COMPETENCIES -->
+  <div id="content1" class="content max-w-6xl mx-auto px-6 py-16 bg-white/5">
+    <h2 class="text-4xl font-bold mb-8 text-center">Key Competencies & Evidence</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white/10 p-8 rounded-3xl hover:scale-105 transition">
+        <h3 class="font-bold text-2xl mb-3">Typing Proficiency</h3>
+        <p class="text-gray-300">Chinese: 40 words/min • English: 50 words/min</p>
+        <p class="mt-4 text-sm">Demonstrated through daily practice and academic assignments.</p>
+      </div>
+      <div class="bg-white/10 p-8 rounded-3xl hover:scale-105 transition">
+        <h3 class="font-bold text-2xl mb-3">Microsoft Office Suite</h3>
+        <p class="text-gray-300">Advanced skills in Word, Excel and PowerPoint</p>
+        <p class="mt-4 text-sm">Used for reports, data analysis and presentations in my studies.</p>
+      </div>
+      <div class="bg-white/10 p-8 rounded-3xl hover:scale-105 transition">
+        <h3 class="font-bold text-2xl mb-3">Teamwork & Creativity</h3>
+        <p class="text-gray-300">Strong collaborator with creative problem-solving mindset</p>
+        <p class="mt-4 text-sm">Valued in group projects and IT-related tasks.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CAREER GOAL -->
-  <section id="content2" class="content py-20 bg-zinc-900">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-12 text-center">Career Goal & Plan</h2>
-      <div class="bg-zinc-800 p-10 rounded-3xl max-w-4xl mx-auto">
-        <p class="italic text-2xl">"As a student currently studying IT, I am committed to harnessing my knowledge and skills to become an IT Professional. My career goal is to apply creative solutions and teamwork to help companies improve their performance through effective technology use."</p>
-      </div>
-
-      <h3 class="text-3xl font-bold mt-16 mb-8 text-center">Steps to Reach My Goal</h3>
-      <div class="space-y-6 max-w-2xl mx-auto">
-        <div class="flex gap-6 bg-zinc-800 p-6 rounded-3xl">
-          <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">1</div>
-          <div>Obtain Microsoft Office Specialist Certification (2026)</div>
-        </div>
-        <div class="flex gap-6 bg-zinc-800 p-6 rounded-3xl">
-          <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">2</div>
-          <div>Complete more IT projects and group work (Ongoing)</div>
-        </div>
-        <div class="flex gap-6 bg-zinc-800 p-6 rounded-3xl">
-          <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">3</div>
-          <div>Build professional network in IT industry (2026 onwards)</div>
-        </div>
-      </div>
+  <!-- PAGE 3: CAREER GOAL -->
+  <div id="content2" class="content max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">Career Goal & Plan</h2>
+    <div class="bg-white/10 p-10 rounded-3xl">
+      <p class="italic text-2xl">"As a student currently studying IT, I am committed to harnessing my knowledge and skills to become an IT Professional. My career goal is to apply creative solutions and teamwork to help companies improve their performance through effective technology use."</p>
     </div>
-  </section>
 
-  <footer class="py-10 text-center text-gray-400 bg-black">LEE TSZ KIT (KEN) • SDD4007 E-Portfolio 2026</footer>
+    <h3 class="text-3xl font-bold mt-16 mb-6">Steps to Reach My Goal</h3>
+    <div class="space-y-8">
+      <div class="flex gap-6"><div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl">1</div><div><strong>Obtain Microsoft Office Specialist Certification</strong><br>2026</div></div>
+      <div class="flex gap-6"><div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl">2</div><div><strong>Complete more IT projects and group work</strong><br>Ongoing</div></div>
+      <div class="flex gap-6"><div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-xl">3</div><div><strong>Build professional network in IT industry</strong><br>2026 onwards</div></div>
+    </div>
+
+    <h3 class="text-3xl font-bold mt-16 mb-6">Skills to Learn</h3>
+    <ul class="grid md:grid-cols-3 gap-6">
+      <li class="bg-white/10 p-6 rounded-3xl">Basic Programming (Python) - Online courses - By Dec 2026</li>
+      <li class="bg-white/10 p-6 rounded-3xl">Advanced Excel & Data Analysis - Workshops - By June 2026</li>
+      <li class="bg-white/10 p-6 rounded-3xl">IT Support Fundamentals - Coursera - Within 1 year</li>
+    </ul>
+  </div>
+
+  <footer class="text-center py-8 text-gray-400">LEE TSZ KIT (KEN) • SDD4007 E-Portfolio 2026</footer>
 
   <script>
     function switchTab(n) {
@@ -114,6 +106,14 @@
       document.getElementById('content'+n).classList.add('content-active');
       document.getElementById('tab'+n).classList.add('tab-active');
     }
+
+    function exploreJourney() {
+      switchTab(0);
+      setTimeout(() => {
+        document.getElementById('content0').scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
     switchTab(0);
   </script>
 </body>
