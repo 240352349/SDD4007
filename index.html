@@ -67,12 +67,13 @@
           <a class="nav-link" href="#about" data-i18n="navAbout">關於</a>
           <a class="nav-link" href="#work" data-i18n="navWork">作品</a>
           <a class="nav-link" href="#plan" data-i18n="navPlan">計劃</a>
+          <a class="nav-link" href="#contact" data-i18n="navContact">聯絡</a>
           <a class="nav-link" href="https://github.com/240352349" target="_blank" rel="noopener">GitHub</a>
         </nav>
         <div class="flex items-center gap-2">
           <button id="langBtn" class="toggle" type="button" aria-label="Language">EN</button>
           <button id="themeBtn" class="toggle" type="button" aria-label="Theme">Light</button>
-          <a href="#plan" class="hidden sm:inline text-sm px-4 py-2 rounded-full font-semibold" style="background:var(--chip);color:var(--chip-text)" data-i18n="open">正在找工</a>
+          <a href="#contact" class="hidden sm:inline text-sm px-4 py-2 rounded-full font-semibold" style="background:var(--chip);color:var(--chip-text)" data-i18n="open">正在找工</a>
         </div>
       </div>
     </header>
@@ -87,7 +88,7 @@
           <p class="mt-6 text-xl md:text-2xl muted max-w-xl" data-i18n="hero">KEN。Northumbria 讀緊 BSc Computing。HKIIT HD 畢業，做過 Java、Flutter 同網頁。</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#work" class="px-5 py-3 rounded-full text-white font-semibold" style="background:var(--accent)" data-i18n="seeWork">睇作品</a>
-            <a href="https://github.com/240352349" target="_blank" rel="noopener" class="px-5 py-3 rounded-full border" style="border-color:var(--line)">github.com/240352349</a>
+            <a href="#contact" class="px-5 py-3 rounded-full border" style="border-color:var(--line)" data-i18n="contactBtn">聯絡我</a>
           </div>
         </div>
         <div class="glass rounded-[28px] p-6">
@@ -175,7 +176,7 @@
         </div>
       </section>
 
-      <section id="plan" class="pb-24">
+      <section id="plan" class="pb-20">
         <p class="font-mono text-xs tracking-[.2em] mint mb-3">03 — <span data-i18n="planLabel">計劃</span></p>
         <div class="glass rounded-3xl p-8 md:p-10">
           <h2 class="text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl" data-i18n="planTitle">讀完 degree。找份工做 debug。繼續 ship。</h2>
@@ -184,6 +185,28 @@
             <li class="flex gap-4"><span class="font-mono" style="color:var(--accent)">02</span><span data-i18n-html="step2"><strong>而家找 IT support / web / junior dev。</strong> 學校 IT 同 programmer 職位已經投過。</span></li>
             <li class="flex gap-4"><span class="font-mono" style="color:var(--accent)">03</span><span data-i18n-html="step3"><strong>英文撞去 IELTS 6.5。</strong> 仲練緊，唔裝熟。</span></li>
           </ol>
+        </div>
+      </section>
+
+      <section id="contact" class="pb-24">
+        <p class="font-mono text-xs tracking-[.2em] mint mb-3">04 — <span data-i18n="contactLabel">聯絡</span></p>
+        <div class="glass rounded-3xl p-8 md:p-10">
+          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="contactTitle">找工中。直接聯絡。</h2>
+          <p class="mt-4 muted max-w-xl" data-i18n="contactLead">IT support、web、junior dev 都接。同 CV 一樣嘅聯絡方式。</p>
+          <div class="mt-8 grid md:grid-cols-3 gap-4">
+            <a class="rounded-2xl p-5 block" style="border:1px solid var(--line)" href="mailto:tb1591915@gmail.com">
+              <p class="font-mono text-xs faint">EMAIL</p>
+              <p class="mt-2 text-lg break-all">tb1591915@gmail.com</p>
+            </a>
+            <a class="rounded-2xl p-5 block" style="border:1px solid var(--line)" href="tel:+85269352470">
+              <p class="font-mono text-xs faint">PHONE</p>
+              <p class="mt-2 text-lg">+852 6935 2470</p>
+            </a>
+            <a class="rounded-2xl p-5 block" style="border:1px solid var(--line)" href="https://github.com/240352349" target="_blank" rel="noopener">
+              <p class="font-mono text-xs faint">GITHUB</p>
+              <p class="mt-2 text-lg">240352349 ↗</p>
+            </a>
+          </div>
         </div>
       </section>
     </main>
@@ -196,8 +219,8 @@
   <script>
     const I18N = {
       zh: {
-        navAbout: "關於", navWork: "作品", navPlan: "計劃", open: "正在找工",
-        eyebrow: "香港 · Computing",
+        navAbout: "關於", navWork: "作品", navPlan: "計劃", navContact: "聯絡", open: "正在找工",
+        eyebrow: "香港 · Computing", contactBtn: "聯絡我",
         hero: "KEN。Northumbria 讀緊 BSc Computing。HKIIT HD 畢業，做過 Java、Flutter 同網頁。",
         seeWork: "睇作品", aboutLabel: "關於", aboutTitle: "一半學生，一半做野。",
         aboutP1: "2026 年於香港資訊科技學院完成資訊科技 / 軟件工程高級文憑。而家讀緊 Northumbria University BSc (Hons) Computing。",
@@ -215,11 +238,13 @@
         step1: "<strong>Northumbria BSc (Hons) Computing。</strong> 2026 開始，讀緊。",
         step2: "<strong>而家找 IT support / web / junior dev。</strong> 學校 IT 同 programmer 職位已經投過。",
         step3: "<strong>英文撞去 IELTS 6.5。</strong> 仲練緊，唔裝熟。",
+        contactLabel: "聯絡", contactTitle: "找工中。直接聯絡。",
+        contactLead: "IT support、web、junior dev 都接。同 CV 一樣嘅聯絡方式。",
         langBtn: "EN", themeDark: "Light", themeLight: "Dark"
       },
       en: {
-        navAbout: "About", navWork: "Work", navPlan: "Plan", open: "Open to work",
-        eyebrow: "Hong Kong · Computing",
+        navAbout: "About", navWork: "Work", navPlan: "Plan", navContact: "Contact", open: "Open to work",
+        eyebrow: "Hong Kong · Computing", contactBtn: "Contact me",
         hero: "KEN. BSc Computing at Northumbria. HD IT graduate who ships Java, Flutter and websites.",
         seeWork: "See the work", aboutLabel: "ABOUT", aboutTitle: "Half student, half builder.",
         aboutP1: "Finished Higher Diploma in IT / Software Engineering at Hong Kong Institute of Information Technology in 2026. Now on BSc (Hons) Computing at Northumbria University.",
@@ -237,6 +262,8 @@
         step1: "<strong>BSc (Hons) Computing, Northumbria.</strong> Started 2026, in progress.",
         step2: "<strong>IT support / web / junior dev, now.</strong> School IT and programmer applications already out.",
         step3: "<strong>English to IELTS 6.5.</strong> Still levelling, not pretending it is done.",
+        contactLabel: "CONTACT", contactTitle: "Open to work. Contact me directly.",
+        contactLead: "IT support, web, and junior dev roles. Same details as the CV.",
         langBtn: "中", themeDark: "Light", themeLight: "Dark"
       }
     };
