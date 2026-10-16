@@ -37,7 +37,7 @@
         linear-gradient(90deg, var(--grid) 1px, transparent 1px);
       background-size: auto, auto, 48px 48px, 48px 48px;
     }
-    .glass { background: var(--glass); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.12); backdrop-filter: blur(16px); }
+    .glass { background: var(--glass); border: 1px solid var(--line); box-shadow: 0 10px 28px rgba(0,0,0,.10), 0 24px 64px rgba(0,0,0,.18); backdrop-filter: blur(16px); }
     .muted { color: var(--muted); }
     .faint { color: var(--faint); }
     .mint { color: var(--mint); }
@@ -56,6 +56,23 @@
     .preview img { height: 148px; width: auto; max-width: 78%; object-fit: contain; }
     #mobileNav { display: none; }
     #mobileNav.open { display: grid; }
+    h1, h2 { letter-spacing: -0.02em; }
+    ::selection { background: color-mix(in srgb, var(--accent) 40%, transparent); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .live-card .mint {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: 0 1px;
+      transition: background-size .25s ease;
+    }
+    .live-card:hover .mint { background-size: 100% 1px; }
+    @media (prefers-reduced-motion: reduce) {
+      .pulse { animation: none; }
+      .live-card { transition: border-color .2s ease; }
+      .live-card:hover { transform: none; }
+      .live-card .mint { transition: none; }
+    }
   </style>
 </head>
 <body class="font-sans antialiased">
@@ -92,7 +109,7 @@
           <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[.16em] faint mb-6">
             <span class="pulse"></span> <span data-i18n="eyebrow">Hong Kong · Open to work</span>
           </div>
-          <h1 class="text-5xl md:text-7xl font-semibold tracking-tight leading-[.95]">LEE TSZ KIT<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#c8b6ff] to-[#3ee0c5]">李梓傑</span></h1>
+          <h1 class="text-5xl md:text-7xl font-semibold leading-[.95]">LEE TSZ KIT<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-[#c8b6ff] to-[#3ee0c5]">李梓傑</span></h1>
           <p class="mt-6 text-xl md:text-2xl max-w-xl" data-i18n="role">IT support, web, and junior dev.</p>
           <p class="mt-3 text-lg muted max-w-xl" data-i18n="hero">KEN. Northumbria BSc Computing. HD IT graduate who ships Java, Flutter, and live websites.</p>
           <div class="mt-8 flex flex-wrap gap-3">
@@ -116,7 +133,7 @@
         <p class="font-mono text-xs tracking-[.2em] mint mb-3">01 — <span data-i18n="aboutLabel">ABOUT</span></p>
         <div class="grid md:grid-cols-5 gap-4">
           <article class="glass rounded-3xl p-7 md:col-span-3">
-            <h2 class="text-3xl font-semibold tracking-tight" data-i18n="aboutTitle">Half student, half builder.</h2>
+            <h2 class="text-3xl font-semibold" data-i18n="aboutTitle">Half student, half builder.</h2>
             <p class="mt-4 muted leading-relaxed" data-i18n="aboutP1">Finished Higher Diploma in IT / Software Engineering at Hong Kong Institute of Information Technology in 2026. Now on BSc (Hons) Computing at Northumbria University.</p>
             <p class="mt-4 muted leading-relaxed" data-i18n="aboutP2">I care more about a working build than a pretty slide. I also run Fluxith, a local esports community for NBA Peak Showdown — events, streams, sponsorships.</p>
           </article>
@@ -138,7 +155,7 @@
 
       <section id="work" class="pb-20">
         <p class="font-mono text-xs tracking-[.2em] mint mb-3">02 — <span data-i18n="workLabel">WORK</span></p>
-        <h2 class="text-4xl font-semibold tracking-tight mb-6" data-i18n="workTitle">Live sites a recruiter can open.</h2>
+        <h2 class="text-4xl font-semibold mb-6" data-i18n="workTitle">Live sites a recruiter can open.</h2>
         <div class="grid md:grid-cols-2 gap-4 mb-8">
           <a class="live-card glass rounded-3xl p-5 block" href="https://crystalthreadhk.com/" target="_blank" rel="noopener">
             <div class="preview mb-5"><img src="https://crystalthreadhk.com/icon/2.webp" alt="Crystal Thread"></div>
@@ -184,7 +201,7 @@
       <section id="plan" class="pb-20">
         <p class="font-mono text-xs tracking-[.2em] mint mb-3">03 — <span data-i18n="planLabel">PLAN</span></p>
         <div class="glass rounded-3xl p-8 md:p-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight max-w-2xl" data-i18n="planTitle">Finish the degree. Get paid to debug. Keep shipping.</h2>
+          <h2 class="text-3xl md:text-4xl font-semibold max-w-2xl" data-i18n="planTitle">Finish the degree. Get paid to debug. Keep shipping.</h2>
           <ol class="mt-8 space-y-5">
             <li class="flex gap-4"><span class="font-mono" style="color:var(--accent)">01</span><span data-i18n-html="step1"><strong>BSc (Hons) Computing, Northumbria.</strong> Started 2026, in progress.</span></li>
             <li class="flex gap-4"><span class="font-mono" style="color:var(--accent)">02</span><span data-i18n-html="step2"><strong>IT support / web / junior dev, now.</strong> School IT and programmer applications already out.</span></li>
@@ -196,7 +213,7 @@
       <section id="contact" class="pb-24">
         <p class="font-mono text-xs tracking-[.2em] mint mb-3">04 — <span data-i18n="contactLabel">CONTACT</span></p>
         <div class="glass rounded-3xl p-8 md:p-10">
-          <h2 class="text-3xl md:text-4xl font-semibold tracking-tight" data-i18n="contactTitle">Open to work. Contact me directly.</h2>
+          <h2 class="text-3xl md:text-4xl font-semibold" data-i18n="contactTitle">Open to work. Contact me directly.</h2>
           <p class="mt-4 muted max-w-xl" data-i18n="contactLead">IT support, web, and junior dev roles. Same details as the CV.</p>
           <div class="mt-8 grid md:grid-cols-3 gap-4">
             <a class="rounded-2xl p-5 block" style="border:1px solid var(--line)" href="mailto:tb1591915@gmail.com">
@@ -220,27 +237,27 @@
   <script>
     const I18N = {
       zh: {
-        navAbout: "關於", navWork: "作品", navPlan: "計劃", navContact: "聯絡", open: "正在找工",
-        eyebrow: "香港 · 正在找工", role: "IT support、web、junior dev。",
+        navAbout: "關於", navWork: "作品", navPlan: "計劃", navContact: "聯絡", open: "求職中",
+        eyebrow: "香港 · 求職中", role: "資訊科技支援、網頁開發與初級程式開發。",
         contactBtn: "聯絡我",
-        hero: "KEN。Northumbria 讀緊 BSc Computing。HKIIT HD 畢業，做過 Java、Flutter 同上線網站。",
-        seeWork: "睇作品", aboutLabel: "關於", aboutTitle: "一半學生，一半做野。",
-        aboutP1: "2026 年於香港資訊科技學院完成資訊科技 / 軟件工程高級文憑。而家讀緊 Northumbria University BSc (Hons) Computing。",
-        aboutP2: "我在意做出嚟野，唔係整一套 slide。另外搞 Fluxith，做 NBA Peak Showdown 本地賽事、直播同贊助。",
+        hero: "KEN。現於 Northumbria University 修讀 BSc Computing；香港資訊科技學院高級文憑畢業，曾開發 Java、Flutter 應用及已上線網站。",
+        seeWork: "查看作品", aboutLabel: "關於", aboutTitle: "半工半讀，持續實作",
+        aboutP1: "2026 年於香港資訊科技學院完成資訊科技／軟件工程高級文憑，現於 Northumbria University 修讀 BSc (Hons) Computing。",
+        aboutP2: "重視可運行的成品多於簡報；另營運 Fluxith，籌辦 NBA Peak Showdown 本地賽事、直播與贊助。",
         now: "Northumbria · BSc (Hons) Computing",
-        workLabel: "作品", workTitle: "HR 可以即刻開的網站。",
-        crystal: "香港水晶網。產品頁、手圍客製，可以交俾客人睇。",
-        taeyeonTitle: "太妍粉絲專頁", taeyeon: "個人向站。時間線、專輯頁、中英切換同背景音樂。",
-        smart: "Flutter app 嘅網頁版。情緒記錄、呼吸同 AI 對話，Cross-Strait 2026 港區入選作。",
-        other: "其他專案", clinic: "診所流程系統。Maven、Java web，課程真案，唔係 todo list 克隆。",
-        meme: "Python CNN 課程。公開 repo 同 demo 仲未上，呢張卡先唔裝有 link。",
-        flux: "NBA Peak Showdown 港台活動。Dynasty Cup、街頭 2v2、直播、贊助同反作弊標準。",
-        planLabel: "計劃", planTitle: "讀完 degree。找份工做 debug。繼續 ship。",
-        step1: "<strong>Northumbria BSc (Hons) Computing。</strong> 2026 開始，讀緊。",
-        step2: "<strong>而家找 IT support / web / junior dev。</strong> 學校 IT 同 programmer 職位已經投過。",
-        step3: "<strong>英文撞去 IELTS 6.5。</strong> 仲練緊，唔裝熟。",
-        contactLabel: "聯絡", contactTitle: "找工中。直接聯絡。",
-        contactLead: "IT support、web、junior dev 都接。同 CV 一樣嘅聯絡方式。",
+        workLabel: "作品", workTitle: "招聘方可即時瀏覽的上線作品",
+        crystal: "香港水晶專門店網站，含產品頁與手圍客製，可直接展示予客戶。",
+        taeyeonTitle: "太妍粉絲專頁", taeyeon: "個人粉絲站，設時間線、專輯頁、中英切換與背景音樂。",
+        smart: "Flutter 應用之網頁版，包含情緒記錄、呼吸練習與 AI 對話；為 Cross-Strait 2026 港區入選作品。",
+        other: "其他專案", clinic: "診所工作流程系統（Maven、Java Web），為課程真實案例，而非簡易待辦示範。",
+        meme: "Python CNN 課程專案；公開程式庫與示範尚未上線，故暫不附連結。",
+        flux: "於港台籌辦 NBA Peak Showdown 活動，包括 Dynasty Cup、街頭 2v2、直播、贊助及反作弊標準。",
+        planLabel: "計劃", planTitle: "完成學位、投入實務開發、持續交付作品",
+        step1: "<strong>Northumbria BSc (Hons) Computing。</strong> 2026 開始，修讀中。",
+        step2: "<strong>現正申請資訊科技支援／網頁／初級開發職位。</strong> 相關申請已陸續遞交。",
+        step3: "<strong>英語目標 IELTS 6.5。</strong> 仍在準備中。",
+        contactLabel: "聯絡", contactTitle: "歡迎聯絡",
+        contactLead: "歡迎資訊科技支援、網頁及初級開發職位查詢；聯絡方式與履歷相同。",
         langBtn: "EN", themeDark: "Light", themeLight: "Dark"
       },
       en: {
